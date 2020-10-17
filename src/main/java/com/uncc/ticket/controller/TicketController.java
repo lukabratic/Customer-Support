@@ -52,6 +52,7 @@ public class TicketController {
 
     @RequestMapping(value = "/tickets/edit/{id}", method = RequestMethod.GET)
     public String editTicket(Model model,@PathVariable("id") Long id) {
+        // Find by id
         model.addAttribute("ticket", this.ticketService.findById(id));
         return "tickets/storeTicket";
     }
